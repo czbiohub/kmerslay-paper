@@ -1,5 +1,5 @@
 ---
-title: "Manuscript Title"
+title: "INCOMPLETE DRAFT: Predict protein-coding sequence from RNA-seq reads using $k$-mers"
 keywords:
   - markdown
   - publishing
@@ -7,15 +7,14 @@ keywords:
 lang: en-US
 authors:
   -
-    github: johndoe
-    name: John Doe
-    initials: JD
-    orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: johndoe
-    email: john.doe@something.com
+    github: olgabot
+    name: Olga Borisovna Botvinnik
+    initials: OBB
+    orcid: 0000-0003-4412-7970
+    twitter: olgabot
+    email: olga.botvinnik@czbiohub.org
     affiliations:
-      - Department of Something, University of Whatever
-    funders: Grant XXXXXXXX
+      - Data Sciences Platform, Chan Zuckerberg Biohub
   -
     github: janeroe
     name: Jane Roe
