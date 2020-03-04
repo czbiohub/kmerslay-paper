@@ -1,7 +1,7 @@
 ---
 author-meta:
 - John Doe
-- Jane Roe
+- N. Tessa Pierce
 bibliography:
 - content/manual-references.json
 date-meta: '2020-03-04'
@@ -47,13 +47,11 @@ header-includes: '<!--
 
   <meta name="twitter:creator" content="@johndoe" />
 
-  <meta name="citation_author" content="Jane Roe" />
+  <meta name="citation_author" content="N. Tessa Pierce" />
 
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
+  <meta name="citation_author_institution" content="Department of Population Health and Reproduction, University of California, Davis" />
 
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
-
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author_orcid" content="0000-0002-2942-5331" />
 
   <link rel="canonical" href="https://czbiohub.github.io/kmerslay-paper/" />
 
@@ -67,11 +65,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/1780fac0ac6bba1260a9da3886061730fa5d2765/" />
+  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/" />
 
-  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/1780fac0ac6bba1260a9da3886061730fa5d2765/" />
+  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/1780fac0ac6bba1260a9da3886061730fa5d2765/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,9 +101,9 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://czbiohub.github.io/kmerslay-paper/v/1780fac0ac6bba1260a9da3886061730fa5d2765/))
+([permalink](https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/))
 was automatically generated
-from [czbiohub/kmerslay-paper@1780fac](https://github.com/czbiohub/kmerslay-paper/tree/1780fac0ac6bba1260a9da3886061730fa5d2765)
+from [czbiohub/kmerslay-paper@f24f7df](https://github.com/czbiohub/kmerslay-paper/tree/f24f7dfcf61a83a6c54503454f605d8de819c933)
 on March 4, 2020.
 </em></small>
 
@@ -125,13 +123,14 @@ on March 4, 2020.
      · Funded by Grant XXXXXXXX
   </small>
 
-+ **Jane Roe**<br>
++ **N. Tessa Pierce**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+    [0000-0002-2942-5331](https://orcid.org/0000-0002-2942-5331)
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [janeroe](https://github.com/janeroe)<br>
+    [bluegenes](https://github.com/bluegenes)<br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
+     Department of Population Health and Reproduction, University of California, Davis
+     · Funded by NSF 1711984
   </small>
 
 
