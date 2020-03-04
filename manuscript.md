@@ -1,6 +1,6 @@
 ---
 author-meta:
-- John Doe
+- Olga Borisovna Botvinnik
 - N. Tessa Pierce
 bibliography:
 - content/manual-references.json
@@ -15,13 +15,13 @@ header-includes: '<!--
 
   <meta name="dc.format" content="text/html" />
 
-  <meta name="dc.title" content="Manuscript Title" />
+  <meta name="dc.title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
 
-  <meta name="citation_title" content="Manuscript Title" />
+  <meta name="citation_title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
 
-  <meta property="og:title" content="Manuscript Title" />
+  <meta property="og:title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
 
-  <meta property="twitter:title" content="Manuscript Title" />
+  <meta property="twitter:title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
 
   <meta name="dc.date" content="2020-03-04" />
 
@@ -39,13 +39,13 @@ header-includes: '<!--
 
   <meta name="citation_technical_report_institution" content="Manubot" />
 
-  <meta name="citation_author" content="John Doe" />
+  <meta name="citation_author" content="Olga Borisovna Botvinnik" />
 
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
+  <meta name="citation_author_institution" content="Data Sciences Platform, Chan Zuckerberg Biohub" />
 
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author_orcid" content="0000-0003-4412-7970" />
 
-  <meta name="twitter:creator" content="@johndoe" />
+  <meta name="twitter:creator" content="@olgabot" />
 
   <meta name="citation_author" content="N. Tessa Pierce" />
 
@@ -65,11 +65,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/" />
+  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
 
-  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/" />
+  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -91,7 +91,7 @@ manubot-clear-requests-cache: false
 manubot-output-bibliography: output/references.json
 manubot-output-citekeys: output/citations.tsv
 manubot-requests-cache-path: ci/cache/requests-cache
-title: Manuscript Title
+title: 'INCOMPLETE DRAFT: RNA --k-mers--> Protein'
 ...
 
 
@@ -101,9 +101,9 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/))
+([permalink](https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/))
 was automatically generated
-from [czbiohub/kmerslay-paper@f24f7df](https://github.com/czbiohub/kmerslay-paper/tree/f24f7dfcf61a83a6c54503454f605d8de819c933)
+from [czbiohub/kmerslay-paper@412537d](https://github.com/czbiohub/kmerslay-paper/tree/412537d4104c0a67b0593efe484f12bea3fe1ca7)
 on March 4, 2020.
 </em></small>
 
@@ -111,16 +111,15 @@ on March 4, 2020.
 
 
 
-+ **John Doe**<br>
++ **Olga Borisovna Botvinnik**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+    [0000-0003-4412-7970](https://orcid.org/0000-0003-4412-7970)
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [johndoe](https://github.com/johndoe)
+    [olgabot](https://github.com/olgabot)
     · ![Twitter icon](images/twitter.svg){.inline_icon}
-    [johndoe](https://twitter.com/johndoe)<br>
+    [olgabot](https://twitter.com/olgabot)<br>
   <small>
-     Department of Something, University of Whatever
-     · Funded by Grant XXXXXXXX
+     Data Sciences Platform, Chan Zuckerberg Biohub
   </small>
 
 + **N. Tessa Pierce**<br>

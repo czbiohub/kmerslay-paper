@@ -1,6 +1,6 @@
 {
   "pandoc": {
-    "title": "Manuscript Title",
+    "title": "INCOMPLETE DRAFT: RNA --k-mers--> Protein",
     "keywords": [
       "markdown",
       "publishing",
@@ -9,10 +9,10 @@
     "lang": "en-US",
     "date-meta": "2020-03-04",
     "author-meta": [
-      "John Doe",
+      "Olga Borisovna Botvinnik",
       "N. Tessa Pierce"
     ],
-    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"Manuscript Title\" />\n<meta name=\"citation_title\" content=\"Manuscript Title\" />\n<meta property=\"og:title\" content=\"Manuscript Title\" />\n<meta property=\"twitter:title\" content=\"Manuscript Title\" />\n<meta name=\"dc.date\" content=\"2020-03-04\" />\n<meta name=\"citation_publication_date\" content=\"2020-03-04\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"John Doe\" />\n<meta name=\"citation_author_institution\" content=\"Department of Something, University of Whatever\" />\n<meta name=\"citation_author_orcid\" content=\"XXXX-XXXX-XXXX-XXXX\" />\n<meta name=\"twitter:creator\" content=\"@johndoe\" />\n<meta name=\"citation_author\" content=\"N. Tessa Pierce\" />\n<meta name=\"citation_author_institution\" content=\"Department of Population Health and Reproduction, University of California, Davis\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-2942-5331\" />\n<link rel=\"canonical\" href=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta property=\"og:url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta property=\"twitter:url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta name=\"citation_pdf_url\" content=\"https://czbiohub.github.io/kmerslay-paper/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://czbiohub.github.io/kmerslay-paper/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->",
+    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein\" />\n<meta name=\"citation_title\" content=\"INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein\" />\n<meta property=\"og:title\" content=\"INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein\" />\n<meta property=\"twitter:title\" content=\"INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein\" />\n<meta name=\"dc.date\" content=\"2020-03-04\" />\n<meta name=\"citation_publication_date\" content=\"2020-03-04\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Olga Borisovna Botvinnik\" />\n<meta name=\"citation_author_institution\" content=\"Data Sciences Platform, Chan Zuckerberg Biohub\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-4412-7970\" />\n<meta name=\"twitter:creator\" content=\"@olgabot\" />\n<meta name=\"citation_author\" content=\"N. Tessa Pierce\" />\n<meta name=\"citation_author_institution\" content=\"Department of Population Health and Reproduction, University of California, Davis\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-2942-5331\" />\n<link rel=\"canonical\" href=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta property=\"og:url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta property=\"twitter:url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://czbiohub.github.io/kmerslay-paper/\" />\n<meta name=\"citation_pdf_url\" content=\"https://czbiohub.github.io/kmerslay-paper/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://czbiohub.github.io/kmerslay-paper/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->",
     "bibliography": [
       "content/manual-references.json"
     ],
@@ -25,16 +25,15 @@
     "date": "March 4, 2020",
     "authors": [
       {
-        "github": "johndoe",
-        "name": "John Doe",
-        "initials": "JD",
-        "orcid": "XXXX-XXXX-XXXX-XXXX",
-        "twitter": "johndoe",
-        "email": "john.doe@something.com",
+        "github": "olgabot",
+        "name": "Olga Borisovna Botvinnik",
+        "initials": "OBB",
+        "orcid": "0000-0003-4412-7970",
+        "twitter": "olgabot",
+        "email": "olga.botvinnik@czbiohub.org",
         "affiliations": [
-          "Department of Something, University of Whatever"
+          "Data Sciences Platform, Chan Zuckerberg Biohub"
         ],
-        "funders": "Grant XXXXXXXX",
         "affiliation_numbers": [
           1
         ]
@@ -56,7 +55,7 @@
     ],
     "affiliations": [
       {
-        "affiliation": "Department of Something, University of Whatever",
+        "affiliation": "Data Sciences Platform, Chan Zuckerberg Biohub",
         "affiliation_number": 1
       },
       {
@@ -69,15 +68,15 @@
       "repo_slug": "czbiohub/kmerslay-paper",
       "repo_owner": "czbiohub",
       "repo_name": "kmerslay-paper",
-      "commit": "f24f7dfcf61a83a6c54503454f605d8de819c933",
-      "triggering_commit": "f24f7dfcf61a83a6c54503454f605d8de819c933",
-      "build_url": "https://github.com/czbiohub/kmerslay-paper/commit/f24f7dfcf61a83a6c54503454f605d8de819c933/checks",
+      "commit": "412537d4104c0a67b0593efe484f12bea3fe1ca7",
+      "triggering_commit": "412537d4104c0a67b0593efe484f12bea3fe1ca7",
+      "build_url": "https://github.com/czbiohub/kmerslay-paper/commit/412537d4104c0a67b0593efe484f12bea3fe1ca7/checks",
       "job_url": "https://github.com/czbiohub/kmerslay-paper/runs/run2"
     },
     "html_url": "https://czbiohub.github.io/kmerslay-paper/",
     "pdf_url": "https://czbiohub.github.io/kmerslay-paper/manuscript.pdf",
-    "html_url_versioned": "https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/",
-    "pdf_url_versioned": "https://czbiohub.github.io/kmerslay-paper/v/f24f7dfcf61a83a6c54503454f605d8de819c933/manuscript.pdf",
+    "html_url_versioned": "https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/",
+    "pdf_url_versioned": "https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/manuscript.pdf",
     "manubot_version": "0.3.1",
     "rootstock_commit": "1780fac0ac6bba1260a9da3886061730fa5d2765",
     "manuscript_stats": {
