@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Olga Borisovna Botvinnik" />
   <meta name="author" content="N. Tessa Pierce" />
-  <meta name="dcterms.date" content="2020-03-04" />
+  <meta name="dcterms.date" content="2020-03-07" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>INCOMPLETE DRAFT: RNA –k-mers–&gt; Protein</title>
   <style>
@@ -91,8 +91,8 @@
   <meta name="citation_title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
   <meta property="og:title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
   <meta property="twitter:title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
-  <meta name="dc.date" content="2020-03-04" />
-  <meta name="citation_publication_date" content="2020-03-04" />
+  <meta name="dc.date" content="2020-03-07" />
+  <meta name="citation_publication_date" content="2020-03-07" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -112,9 +112,9 @@
   <meta name="citation_fulltext_html_url" content="https://czbiohub.github.io/kmerslay-paper/" />
   <meta name="citation_pdf_url" content="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
-  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
-  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/" />
+  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/" />
+  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -135,10 +135,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/">permalink</a>)
+(<a href="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/czbiohub/kmerslay-paper/tree/412537d4104c0a67b0593efe484f12bea3fe1ca7">czbiohub/kmerslay-paper@412537d</a>
-on March 4, 2020.
+from <a href="https://github.com/czbiohub/kmerslay-paper/tree/094e6008fcbfedb9d35dab14cf83081cb12aaff0">czbiohub/kmerslay-paper@094e600</a>
+on March 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -163,11 +163,150 @@ Department of Population Health and Reproduction, University of California, Davi
 </small></p></li>
 </ul>
 <h2 class="page_break_before" id="abstract">Abstract</h2>
-<p>This manuscript is a template (aka “rootstock”) for <a href="https://manubot.org/" title="Manubot">Manubot</a>, a tool for writing scholarly manuscripts.
-Use this template as a starting point for your manuscript.</p>
-<p>The rest of this document is a full list of formatting elements/features supported by Manubot.
-Compare the input (<code>.md</code> files in the <code>/content</code> directory) to the output you see below.</p>
-<h2 id="basic-formatting">Basic formatting</h2>
+<p>RNA-sequencing is a widely used measure of cellular state, and it is often used as proxy for estimating abundance of protein-coding molecules.
+However, the tools to estimate protein-coding sequence from RNA-seq reads don’t allow for extraction of protein-coding sequences from distantly related species.
+We present <code>kmerslay</code>, a suite of <span class="math inline">\(k\)</span>-mer based tools to extract protein-coding sequences from RNA-seq reads using reduced amino acid alphabets to allow for flexibility in proteome evolution.
+<code>kmerslay</code> can also perform all-by-all <span class="math inline">\(k\)</span>-mer similarity of sequences in both amino acid and nucleotide reduced alphabets to find clusters of similar sequences which can then be used for homology inference.
+By enabling extraction of protein-coding sequences across a wide variety of species, <code>kmerslay</code> spearheads analysis of non-model organisms and their contribution to the evolution of life.</p>
+<h2 id="outline">Outline</h2>
+<figure>
+<img src="images/SVG/figure1.svg" id="sfig:figure1" data-tag="figure1" style="width:100.0%" alt="" /><figcaption>Overview of <code>kmerslay extract-coding</code> <strong>A.</strong> First, each read is translated into all six possible protein-coding translation frames. Next, reading frames with stop codons are eliminated. Each protein-coding frame is <span class="math inline">\(k\)</span>-merized, then the fraction of <span class="math inline">\(k\)</span>-mers which appear in the known protein-coding database is computed. Frames which contain a fraction of coding frames exceeding the threshold are inferred to be putatively protein-coding. <strong>B.</strong> Worked example of an RNA-seq read with a single putatitive reading frame. <strong>C.</strong> Worked example of an RNA-seq read with multiple reading frames, and a UCSC genome browser shot of the read showing that both reading frames are present in the annotation.</figcaption>
+</figure>
+<figure>
+<img src="images/SVG/figure2.svg" id="sfig:figure2" data-tag="figure2" style="width:100.0%" alt="" /><figcaption>Applications of <code>kmerslay extract-coding</code>. <strong>A.</strong> We simulated RNA-seq data using Opisthokonta species from the Quest for Orthologs dataset for true positive protein-coding RNAs, reads completely contained within intergenic, intronic, and UTR sequences as true positive noncoding RNAs, and reads partially overlapping a coding and noncoding region as an adversarial test set. We then predicted protein-coding sequences and computed false positive and false negative rates. False Positive coding reads were found to be … False negative noncoding reads were found to be … <strong>B.</strong> Number of putative protein-coding sequences per read. <strong>C.</strong> This method could also be used to extract only reads whose putative protein-coding sequences are transcription factors. <strong>D.</strong> We ran <code>kmerslay extract-coding</code> on the five tissues and nine species from the Brawand 2011 dataset.</figcaption>
+</figure>
+<figure>
+<img src="images/SVG/figure3.svg" id="sfig:figure3" data-tag="figure3" style="width:100.0%" alt="" /><figcaption>Overview of <code>kmerslay compare-kmer-content</code> <strong>A.</strong> Protein sequences are <span class="math inline">\(k\)</span>-merized by converting into a bag of words using a sliding window of size <span class="math inline">\(k\)</span>, potentially re-encoded to a lossy alphabet, and then their fraction of overlapping <span class="math inline">\(k\)</span>-mers is computed into a Jaccard similarity. <strong>B.</strong> One option for <code>kmerslay compare-kmer-content</code> is to specify a pair of sequence files, and compute a background of <span class="math inline">\(k\)</span>-mer similarty using randomly shuffled pairs. <strong>C.</strong> Another option for <code>kmerslay compare-kmer-content</code> is to do an all-by-all <span class="math inline">\(k\)</span>-mer similarity comparison.</figcaption>
+</figure>
+<figure>
+<img src="images/SVG/figure4.svg" id="sfig:figure4" data-tag="figure4" style="width:100.0%" alt="" /><figcaption>Applications of <code>kmerslay compare-kmer-content</code>. <strong>A.</strong> We used <code>kmerslay compare-kmer-content</code> on pairs of orthologous protein sequences between humans and the remaining Opisthokonta species in the Quest for Orthologs dataset. x-axis, <span class="math inline">\(k\)</span>-mer size, y-axis, mean difference. <strong>B.</strong> False positive calls by <code>kmerslay compare-kmer-content</code> are either paralogs or read-through protein products. <strong>C.</strong> We applied <code>kmerslay compare-kmer-content</code> to … to find putative orthologs. We found … the accuracy was …</figcaption>
+</figure>
+<h3 id="dayhoff-and-hp-alphabets">Dayhoff and HP alphabets</h3>
+<div id="tbl:sequence-encodings" class="tablenos">
+<table>
+<caption><span>Table 1:</span> Dayhoff and hydrophobic-polar encodings are a reduced amino acid
+alphabet allowing for permissive cross-species sequence comparisons. For
+example, the amino acid sequence <code>SASHAFIERCE</code> would be Dayhoff-encoded
+to <code>bbbdbfecdac</code>, and HP-encoded to <code>phpphhhpppp</code>, as below. </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Amino acid</th>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Dayhoff</th>
+<th style="text-align: left;">Hydrophobic-polar (HP)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Sulfur polymerization</td>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">p</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A, G, P, S, T</td>
+<td style="text-align: left;">Small</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">A, G, P: h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S,T: p</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D, E, N, Q</td>
+<td style="text-align: left;">Acid and amide</td>
+<td style="text-align: left;">c</td>
+<td style="text-align: left;">p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">H, K, R</td>
+<td style="text-align: left;">Basic</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">p</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I, L, M, V</td>
+<td style="text-align: left;">Hydrophobic</td>
+<td style="text-align: left;">e</td>
+<td style="text-align: left;">h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F, W, Y</td>
+<td style="text-align: left;">Aromatic</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">h</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>protein20: SASHAFIERCE
+dayhoff6:  bbbdbfecdac
+hp2:       phpphhhpppp</code></pre>
+<h3 id="all-implemented-alphabets-with-citations-not-as-nicely-organized">All implemented alphabets (with citations, not as nicely organized)</h3>
+<!-- Copied this google spreadsheet https://docs.google.com/spreadsheets/d/1RDuQD0aRyv-FnQJbjRosHEJV85_9BNrzmmvgFRQSgN8/edit#gid=0 into https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/, reformatted with https://atom.io/packages/markdown-table-formatter -->
+<table>
+<colgroup>
+<col style="width: 82%" />
+<col style="width: 4%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Citation</th>
+<th style="text-align: left;">Alphabet</th>
+<th style="text-align: left;">Amino acid groups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Phillips, R., Kondev, J., Theriot, J., &amp; Garcia, H. (2012). Physical Biology of the Cell. Garland Science.</td>
+<td style="text-align: left;">hp2</td>
+<td style="text-align: left;">AFGILMPVWY CDEHKNQRST</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peterson, E. L., Kondev, J., Theriot, J. A., &amp; Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164</td>
+<td style="text-align: left;">gbmr4</td>
+<td style="text-align: left;">G ADKERNTSQ YFLIVMCWH P</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dayhoff, M. O., &amp; Eck, R. V. (1968). Atlas of Protein Sequence Structure, 1967-68.</td>
+<td style="text-align: left;">dayhoff6</td>
+<td style="text-align: left;">AGPST HRK DENQ FWY ILMV C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">This paper</td>
+<td style="text-align: left;">botvinnik8</td>
+<td style="text-align: left;">AG DE RK NQ ST FY LIV CMWHP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hu, X., &amp; Friedberg, I. (2019). SwiftOrtho: A fast, memory-efficient, multiple genome orthology classifier. GigaScience, 8(10), 309–12. http://doi.org/10.1093/gigascience/giz118</td>
+<td style="text-align: left;">aa9</td>
+<td style="text-align: left;">G AST KR EQ DN CFILMVY W H P</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peterson, E. L., Kondev, J., Theriot, J. A., &amp; Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164</td>
+<td style="text-align: left;">sdm12</td>
+<td style="text-align: left;">G A D KER N TSQ YF LIVM C W H P</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Peterson, E. L., Kondev, J., Theriot, J. A., &amp; Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164</td>
+<td style="text-align: left;">hsdm17</td>
+<td style="text-align: left;">G A D KE R N T S Q Y F LIV M C W H P</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dayhoff, M. O., &amp; Eck, R. V. (1968). Atlas of Protein Sequence Structure, 1967-68.</td>
+<td style="text-align: left;">protein20</td>
+<td style="text-align: left;">G A D E K R N T S Q Y F L I V M C W H P</td>
+</tr>
+</tbody>
+</table>
+<h2 id="introduction">Introduction</h2>
+<h2 id="methods">Methods</h2>
+<h2 id="results">Results</h2>
+<h2 id="discussion">Discussion</h2>
 <p><strong>Bold</strong> <strong>text</strong></p>
 <p><span class="semibold">Semi-bold text</span></p>
 <p><span class="center">Centered text</span></p>
@@ -257,12 +396,12 @@ And that has made all the difference.</p>
 </blockquote>
 <p>Code <code>in the middle</code> of normal text, aka <code>inline code</code>.</p>
 <p>Code block with Python syntax highlighting:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> manubot.cite.doi <span class="im">import</span> expand_short_doi</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">def</span> test_expand_short_doi():</span>
-<span id="cb1-4"><a href="#cb1-4"></a>    doi <span class="op">=</span> expand_short_doi(<span class="st">&quot;10/c3bp&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    <span class="co"># a string too long to fit within page:</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">assert</span> doi <span class="op">==</span> <span class="st">&quot;10.25313/2524-2695-2018-3-vliyanie-enhansera-copia-i-insulyatora-gypsy-na-sintez-ernk-modifikatsii-hromatina-i-svyazyvanie-insulyatornyh-belkov-vtransfetsirovannyh-geneticheskih-konstruktsiyah&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manubot.cite.doi <span class="im">import</span> expand_short_doi</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">def</span> test_expand_short_doi():</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    doi <span class="op">=</span> expand_short_doi(<span class="st">&quot;10/c3bp&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="co"># a string too long to fit within page:</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="cf">assert</span> doi <span class="op">==</span> <span class="st">&quot;10.25313/2524-2695-2018-3-vliyanie-enhansera-copia-i-insulyatora-gypsy-na-sintez-ernk-modifikatsii-hromatina-i-svyazyvanie-insulyatornyh-belkov-vtransfetsirovannyh-geneticheskih-konstruktsiyah&quot;</span></span></code></pre></div>
 <p>Code block with no syntax highlighting:</p>
 <pre><code>Exporting HTML manuscript
 Exporting DOCX manuscript
@@ -370,7 +509,7 @@ White background specified to serve as a backdrop for transparent sections of th
 </tbody>
 </table>
 </div>
-<div id="tbl:da7400f6-8d03-4ed8-8e74-77d156b98748" class="tablenos">
+<div id="tbl:7cec182e-3b8c-44dc-a256-c0dccdd44a92" class="tablenos">
 <table>
 <caption><span>Table 3:</span> A table with merged cells using the <code>attributes</code> plugin.
 </caption>
@@ -451,6 +590,7 @@ useful for <em>general information</em> - <a href="https://manubot.org/">manubot
 useful for <em>important information</em> - <a href="https://manubot.org/">manubot.org</a></span></p>
 <p><span class="banner lightred"><i class="fas fa-ban fa-lg"></i> <strong>Light Red Banner</strong><br>
 useful for <em>warnings</em> - <a href="https://manubot.org/">manubot.org</a></span></p>
+<h2 id="supplementary">Supplementary</h2>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
