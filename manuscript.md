@@ -4,7 +4,7 @@ author-meta:
 - N. Tessa Pierce
 bibliography:
 - content/manual-references.json
-date-meta: '2020-03-04'
+date-meta: '2020-03-07'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="INCOMPLETE DRAFT: RNA --k-mers--&gt; Protein" />
 
-  <meta name="dc.date" content="2020-03-04" />
+  <meta name="dc.date" content="2020-03-07" />
 
-  <meta name="citation_publication_date" content="2020-03-04" />
+  <meta name="citation_publication_date" content="2020-03-07" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -65,11 +65,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
+  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/" />
 
-  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/" />
+  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -101,10 +101,10 @@ title: 'INCOMPLETE DRAFT: RNA --k-mers--> Protein'
 
 <small><em>
 This manuscript
-([permalink](https://czbiohub.github.io/kmerslay-paper/v/412537d4104c0a67b0593efe484f12bea3fe1ca7/))
+([permalink](https://czbiohub.github.io/kmerslay-paper/v/094e6008fcbfedb9d35dab14cf83081cb12aaff0/))
 was automatically generated
-from [czbiohub/kmerslay-paper@412537d](https://github.com/czbiohub/kmerslay-paper/tree/412537d4104c0a67b0593efe484f12bea3fe1ca7)
-on March 4, 2020.
+from [czbiohub/kmerslay-paper@094e600](https://github.com/czbiohub/kmerslay-paper/tree/094e6008fcbfedb9d35dab14cf83081cb12aaff0)
+on March 7, 2020.
 </em></small>
 
 ## Authors
@@ -136,17 +136,76 @@ on March 4, 2020.
 
 ## Abstract {.page_break_before}
 
+RNA-sequencing is a widely used measure of cellular state, and it is often used as proxy for estimating abundance of protein-coding molecules.
+However, the tools to estimate protein-coding sequence from RNA-seq reads don't allow for extraction of protein-coding sequences from distantly related species.
+We present `kmerslay`, a suite of $k$-mer based tools to extract protein-coding sequences from RNA-seq reads using reduced amino acid alphabets to allow for flexibility in proteome evolution.
+`kmerslay` can also perform all-by-all $k$-mer similarity of sequences in both amino acid and nucleotide reduced alphabets to find clusters of similar sequences which can then be used for homology inference.
+By enabling extraction of protein-coding sequences across a wide variety of species, `kmerslay` spearheads analysis of non-model organisms and their contribution to the evolution of life.
 
 
+## Outline
 
-This manuscript is a template (aka "rootstock") for [Manubot](https://manubot.org/ "Manubot"), a tool for writing scholarly manuscripts.
-Use this template as a starting point for your manuscript.
+![Overview of `kmerslay extract-coding` **A.** First, each read is translated into all six possible protein-coding translation frames. Next, reading frames with stop codons are eliminated. Each protein-coding frame is $k$-merized, then the fraction of $k$-mers which appear in the known protein-coding database is computed. Frames which contain a fraction of coding frames exceeding the threshold are inferred to be putatively protein-coding. **B.** Worked example of an RNA-seq read with a single putatitive reading frame. **C.** Worked example of an RNA-seq read with multiple reading frames, and a UCSC genome browser shot of the read showing that both reading frames are present in the annotation.](images/SVG/figure1.svg){#sfig:figure1 tag="figure1" width="100%"}
 
-The rest of this document is a full list of formatting elements/features supported by Manubot.
-Compare the input (`.md` files in the `/content` directory) to the output you see below.
 
-## Basic formatting
+![Applications of `kmerslay extract-coding`. **A.** We simulated RNA-seq data using Opisthokonta species from the Quest for Orthologs dataset for true positive protein-coding RNAs, reads completely contained within intergenic, intronic, and UTR sequences as true positive noncoding RNAs, and reads partially overlapping a coding and noncoding region as an adversarial test set. We then predicted protein-coding sequences and computed false positive and false negative rates. False Positive coding reads were found to be ... False negative noncoding reads were found to be ... **B.** Number of putative protein-coding sequences per read. **C.** This method could also be used to extract only reads whose putative protein-coding sequences are transcription factors. **D.** We ran `kmerslay extract-coding` on the five tissues and nine species from the Brawand 2011 dataset.](images/SVG/figure2.svg){#sfig:figure2 tag="figure2" width="100%"}
 
+
+![Overview of `kmerslay compare-kmer-content` **A.** Protein sequences are $k$-merized by converting into a bag of words using a sliding window of size $k$, potentially re-encoded to a lossy alphabet, and then their fraction of overlapping $k$-mers is computed into a Jaccard similarity. **B.** One option for `kmerslay compare-kmer-content` is to specify a pair of sequence files, and compute a background of $k$-mer similarty using randomly shuffled pairs. **C.** Another option for `kmerslay compare-kmer-content` is to do an all-by-all $k$-mer similarity comparison.](images/SVG/figure3.svg){#sfig:figure3 tag="figure3" width="100%"}
+
+![Applications of `kmerslay compare-kmer-content`. **A.** We used `kmerslay compare-kmer-content` on pairs of orthologous protein sequences between humans and the remaining Opisthokonta species in the Quest for Orthologs dataset. x-axis, $k$-mer size, y-axis, mean difference. **B.** False positive calls by `kmerslay compare-kmer-content` are either paralogs or read-through protein products. **C.** We applied `kmerslay compare-kmer-content` to ... to find putative orthologs. We found ... the accuracy was ...](images/SVG/figure4.svg){#sfig:figure4 tag="figure4" width="100%"}
+
+
+### Dayhoff and HP alphabets
+
+| Amino acid    | Property              | Dayhoff | Hydrophobic-polar (HP) |
+|:--------------|:----------------------|:--------|:-----------------------|
+| C             | Sulfur polymerization | a       | p                      |
+| A, G, P, S, T | Small                 | b       | A, G, P: h             |
+|               |                       |         | S,T: p                 |
+| D, E, N, Q    | Acid and amide        | c       | p                      |
+| H, K, R       | Basic                 | d       | p                      |
+| I, L, M, V    | Hydrophobic           | e       | h                      |
+| F, W, Y       | Aromatic              | f       | h                      |
+
+Table: Dayhoff and hydrophobic-polar encodings are a reduced amino acid
+alphabet allowing for permissive cross-species sequence comparisons. For
+example, the amino acid sequence `SASHAFIERCE` would be Dayhoff-encoded
+to `bbbdbfecdac`, and HP-encoded to `phpphhhpppp`, as below. {#tbl:sequence-encodings}
+
+
+```
+protein20: SASHAFIERCE
+dayhoff6:  bbbdbfecdac
+hp2:       phpphhhpppp
+```
+
+
+### All implemented alphabets (with citations, not as nicely organized)
+<!-- Copied this google spreadsheet https://docs.google.com/spreadsheets/d/1RDuQD0aRyv-FnQJbjRosHEJV85_9BNrzmmvgFRQSgN8/edit#gid=0 into https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/, reformatted with https://atom.io/packages/markdown-table-formatter -->
+
+| Citation                                                                                                                                                                                                                                             | Alphabet   | Amino acid groups                       |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:----------------------------------------|
+| Phillips, R., Kondev, J., Theriot, J., & Garcia, H. (2012). Physical Biology of the Cell. Garland Science.                                                                                                                                           | hp2        | AFGILMPVWY CDEHKNQRST                   |
+| Peterson, E. L., Kondev, J., Theriot, J. A., & Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164 | gbmr4      | G ADKERNTSQ YFLIVMCWH P                 |
+| Dayhoff, M. O., & Eck, R. V. (1968). Atlas of Protein Sequence Structure, 1967-68.                                                                                                                                                                   | dayhoff6   | AGPST HRK DENQ FWY ILMV C               |
+| This paper                                                                                                                                                                                                                                           | botvinnik8 | AG DE RK NQ ST FY LIV CMWHP             |
+| Hu, X., & Friedberg, I. (2019). SwiftOrtho: A fast, memory-efficient, multiple genome orthology classifier. GigaScience, 8(10), 309–12. http://doi.org/10.1093/gigascience/giz118                                                                    | aa9        | G AST KR EQ DN CFILMVY W H P            |
+| Peterson, E. L., Kondev, J., Theriot, J. A., & Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164 | sdm12      | G A D KER N TSQ YF LIVM C W H P         |
+| Peterson, E. L., Kondev, J., Theriot, J. A., & Phillips, R. (2009). Reduced amino acid alphabets exhibit an improved sensitivity and selectivity in fold assignment. Bioinformatics, 25(11), 1356–1362. http://doi.org/10.1093/bioinformatics/btp164 | hsdm17     | G A D KE R N T S Q Y F LIV M C W H P    |
+| Dayhoff, M. O., & Eck, R. V. (1968). Atlas of Protein Sequence Structure, 1967-68.                                                                                                                                                                   | protein20  | G A D E K R N T S Q Y F L I V M C W H P |
+
+
+## Introduction
+
+
+## Methods
+
+
+## Results
+
+
+## Discussion
 **Bold** __text__
 
 [Semi-bold text]{.semibold}
@@ -429,6 +488,9 @@ useful for *important information* - [manubot.org](https://manubot.org/)
 <i class="fas fa-ban fa-lg"></i> **Light Red Banner**<br>
 useful for *warnings* - [manubot.org](https://manubot.org/)
 ]{.banner .lightred}
+
+
+## Supplementary
 
 
 ## References {.page_break_before}
