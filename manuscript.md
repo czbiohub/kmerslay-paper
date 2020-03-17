@@ -65,11 +65,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://czbiohub.github.io/kmerslay-paper/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/735fc3272ef7394e03015a380aeca858a9e274ea/" />
+  <link rel="alternate" type="text/html" href="https://czbiohub.github.io/kmerslay-paper/v/a4bbfd646ec6370c844b14b0191af09e9cd79ce7/" />
 
-  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/735fc3272ef7394e03015a380aeca858a9e274ea/" />
+  <meta name="manubot_html_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/a4bbfd646ec6370c844b14b0191af09e9cd79ce7/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/735fc3272ef7394e03015a380aeca858a9e274ea/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://czbiohub.github.io/kmerslay-paper/v/a4bbfd646ec6370c844b14b0191af09e9cd79ce7/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -101,9 +101,9 @@ title: 'INCOMPLETE DRAFT: RNA --k-mers--> Protein'
 
 <small><em>
 This manuscript
-([permalink](https://czbiohub.github.io/kmerslay-paper/v/735fc3272ef7394e03015a380aeca858a9e274ea/))
+([permalink](https://czbiohub.github.io/kmerslay-paper/v/a4bbfd646ec6370c844b14b0191af09e9cd79ce7/))
 was automatically generated
-from [czbiohub/kmerslay-paper@735fc32](https://github.com/czbiohub/kmerslay-paper/tree/735fc3272ef7394e03015a380aeca858a9e274ea)
+from [czbiohub/kmerslay-paper@a4bbfd6](https://github.com/czbiohub/kmerslay-paper/tree/a4bbfd646ec6370c844b14b0191af09e9cd79ce7)
 on March 17, 2020.
 </em></small>
 
